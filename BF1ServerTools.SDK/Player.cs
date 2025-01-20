@@ -249,7 +249,7 @@ public static class Player
                 var _spectator = Memory.Read<byte>(_baseAddress + 0x1C31);
                 var _squadId = Memory.Read<int>(_baseAddress + 0x1E50);
                 var _clan = Memory.ReadString(_baseAddress + 0x2151, 64);
-                var _name = Memory.ReadString(_baseAddress + 0x40, 64);
+                var _name = Memory.ReadString(_baseAddress + 0x2156, 64);
 
                 var offset = Memory.Read<long>(_baseAddress + 0x11A8);
                 offset = Memory.Read<long>(offset + 0x28);
@@ -278,7 +278,7 @@ public static class Player
                             continue;
 
                         var vtable = Memory.Read<long>(tempMultiUnlockAsset);
-                        if (vtable == 0x142B8CFA8)
+                        if (vtable == 0x142B8E188)
                         {
                             var tempVehicleName = Memory.ReadString(Memory.Read<long>(tempMultiUnlockAsset + 0x20), 64);
                             if (FixVehicleKits(_weaponSlot[0], tempVehicleName))
@@ -350,7 +350,7 @@ public static class Player
 
             //////////////////////////////// 得分板数据 ////////////////////////////////
 
-            var _pClientScoreBA = Memory.Read<long>(Memory.Bf1ProBaseAddress + 0x39EB8D8);
+            var _pClientScoreBA = Memory.Read<long>(Memory.Bf1ProBaseAddress + 0x39EB8D8 + 0x1000);
             _pClientScoreBA = Memory.Read<long>(_pClientScoreBA + 0x68);
 
             for (int i = 0; i < MaxPlayer; i++)
