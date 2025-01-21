@@ -9,7 +9,7 @@ public static class Offsets
 
     ////////////////////////////////////////////////////////////////////
 
-    public const int Offset_ServerName = 0x3A1F3F8;
+    public const int Offset_ServerName = 0x35146F0;
     public const int Offset_ServerId = 0x37FF1A0;
 
     public const int Offset_ServerTime = 0x3A31138;

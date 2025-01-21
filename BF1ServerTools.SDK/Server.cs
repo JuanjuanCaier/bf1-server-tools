@@ -11,7 +11,7 @@ public static class Server
     public static string GetServerName()
     {
         long pointer = Memory.Read<long>(Memory.Bf1ProBaseAddress + Offsets.Offset_ServerName);
-        pointer = Memory.Read<long>(pointer + 0x30);
+        pointer = Memory.Read<long>(pointer + 0xE0);
         return Memory.ReadString(pointer, 64);
     }
 
